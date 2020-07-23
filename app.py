@@ -1,5 +1,5 @@
 import numpy as np
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, render_template, jsonify
 import pickle
 
 app = Flask(__name__)
@@ -22,6 +22,8 @@ def predict():
 
     return render_template('index.html', prediction_text='Employee Salary should be $ {}'.format(output))
 
+def getDetails():
+    return jsonify("{'name':'Giri', 'place':'Hyderabad'}")
 
 if __name__ == "__main__":
     app.run(debug=True)
